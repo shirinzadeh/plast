@@ -1,0 +1,37 @@
+.features {
+   &-content {
+      margin: 2.5rem 0 4.5rem;
+      padding: 0 6.688rem;
+      @include xlarge {
+         padding: 0;
+      }
+   }
+
+   &-box {
+      @include flex;
+      align-items: center;
+      padding: 2rem 1rem;
+      border-radius: .5rem;
+
+      &--first {
+         background-color: $blue-lighten;
+         border: 1px solid $blue-stroke;
+      }
+      &--second {
+         background-color: $orange-lighten;
+         border: 1px solid $orange-stroke;
+      }
+      &--third {
+         background-color: $green-lighten;
+         border: 1px solid $green-stroke;
+      }
+      &--fourth {
+         background-color: $yellow-lighten;
+         border: 1px solid $yellow-stroke;
+      }
+
+      &__image {
+         margin-right: 1rem;
+      }
+   }
+}

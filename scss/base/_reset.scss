@@ -1,0 +1,83 @@
+*, *:before, *:after{
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, select, details, summary,label, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  // font-size: 100%;
+  // font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+
+:is(.h1, .h2, .h3, .h4, .h5, .h6) {
+  margin: 0;
+}
+
+footer, header, nav, section, main{
+  display: block;
+}
+
+ul{
+  list-style: none;
+}
+
+ol {
+  margin: 0;
+}
+
+blockquote, q{
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after{
+  content: '';
+  content: none;
+}
+
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input{
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+// Remove scrollbars from textarea
+textarea {
+  resize: none;
+  overflow: hidden;
+  height: auto !important;
+}
+
+//all placeholders in Firefox have an opacity value. to fix this
+::-moz-placeholder {
+  opacity: 1;
+}
+
+//Hide Arrows From Input Number
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+summary:focus{
+  font-size: medium;
+}
+
+:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}

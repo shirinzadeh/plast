@@ -1,0 +1,68 @@
+.faq {
+   .heading {
+      .showmore {
+         color: #bdbdbd !important;
+
+         &:is(:hover, :focus) {
+            color: $secondary !important;
+         }
+
+         span {
+            display: block;
+         }
+
+         i {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            font-size: .75rem;
+         }
+      }
+   }
+
+   .accordion {
+      margin-top: 2.5rem;
+
+      &-item {
+         border: 1px solid #E0E0E0;
+         &:not(:last-child) {
+            margin-bottom: 1rem;
+         }
+      }
+
+      &-button {
+         background-color: transparent;
+         justify-content: space-between;
+         padding: 1rem;
+         border-radius: .5rem !important;
+         color: $text-color;
+
+         &::after {
+            display: none;
+         }
+
+         &:focus {
+            border-color: $secondary;
+         }
+
+         &:not(.collapsed) {
+            color: $secondary;
+            box-shadow: none;
+            padding-bottom: .5rem;
+         }
+
+         i {
+            font-size: .875rem;
+            color: $grey-light;
+         }
+      }
+
+      &-body {
+         padding: 0 1rem 1rem;
+      }
+   }
+}
+
+.hidden-faq {
+   display: none;
+}

@@ -1,0 +1,92 @@
+.container {
+   padding: 0 3.25rem !important;
+   @include small {
+      padding: 0 1rem !important;
+   }
+}
+
+.container-small {
+   @include calc(padding-left, 3.25rem + 13.375rem);
+   @include calc(padding-right, 3.25rem + 13.375rem);
+   @include large {
+      padding-left: 3.25rem;
+      padding-right: 3.25rem;
+   }
+   @include small {
+      padding: 0 1rem !important;
+   }
+}
+
+.plst-section {
+   padding: 4.5rem 0;
+}
+
+.heading {
+   &--center {
+      text-align: center;
+
+      .subtitle {
+         max-width: 750px;
+         margin: auto;
+      }
+   }
+}
+
+.title {
+   font-weight: $fw-bold;
+   margin-bottom: .5rem;
+}
+
+.subtitle {
+   letter-spacing: 0.005em;
+}
+
+.shadow {
+   background: #C4C4C4;
+   box-shadow: 0px 6px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* COLORS */
+.bg-grey {
+   background-color: #fafafa;
+}
+
+.blue-lighten {
+   background-color: #F2F9FF;
+}
+
+.green-lighten {
+   background-color: #E7FFFA;
+}
+
+.orange-lighten {
+   background-color: #FFF0E8;
+}
+
+.yellow-lighten {
+   background-color: #FFFFE4;
+}
+
+/* PADDINGS */
+.pb-24 {
+   padding-bottom: 1.5rem;
+}
+
+.rotate180 {
+   @include transform(rotate(180deg));
+   @include transition;
+}
+
+/* OWL CAROUSEL */
+.owl-carousel .owl-stage {
+   padding-left: 0 !important;
+}
+
+.isExpanded {
+   border: 1px solid #F26F68 !important;
+}
+
+/* ANIMATIONS */
+@include keyframes(toTop) {
+   to { top: -1.25rem }
+}

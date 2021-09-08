@@ -1,0 +1,51 @@
+.navbar {
+   padding: 1.5rem 0;
+
+   &-brand {
+      padding: 0;
+      margin: 0;
+   }
+
+   &-toggler {
+      padding: 0;
+   }
+
+   &-nav {
+      @include small {
+         margin-top: .75rem;
+         border: 1px solid $grey;
+         border-radius: 4px;
+         background-color: #fff;
+         min-width: 129px;
+      }
+      .nav-item {
+         @include small {
+            padding: .5rem .75rem;
+         }
+
+         &:not(:first-child) {
+            margin-left: 2rem !important;
+            @include small {
+               margin-left: 0 !important;
+            }
+         }
+
+         &:hover {
+            @include small {
+               background-color: #FAFAFA;
+            }
+         }
+
+      }
+
+      .nav-link {
+         padding: 0 !important;
+         letter-spacing: 0.005em;
+         
+         &:is(.active, :hover, :focus) {
+            color: $primary !important;
+         }
+         
+      }
+   }
+}

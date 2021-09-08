@@ -1,0 +1,30 @@
+/* Font Variables */
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+/* Color variables */
+$primary: #CE2029;
+$secondary: #F26F68;
+$red: #e35f58;
+$text-color: #424242;
+$bg-section:  #fafafa;
+$grey : #E0E0E0;
+$grey-light: rgba(0, 0, 0, 0.54);
+//Features section block
+$blue-lighten: #F2F9FF;
+$blue-stroke: #C1E3FF;
+$green-lighten: #E7FFFA;
+$green-stroke: #ABEFE1;
+$orange-lighten: #FFF0E8;
+$orange-stroke: #FEDCC9;
+$yellow-lighten: #FFFFE4;
+$yellow-stroke: #EAEAA1;
+
+/* Mixins */
+@mixin flex-center {
+   @include flex;
+   justify-content: center;
+   align-items: center;
+}

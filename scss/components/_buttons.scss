@@ -1,0 +1,20 @@
+.btn {
+   min-width: 127px;
+   border-radius: .5rem;
+   padding: 0.469rem 1rem;
+   font-weight: $fw-medium;
+
+   &--more {
+      // background-color: $secondary;
+   }
+
+   &--primary {
+      background-color: $secondary;
+      color: #fff;
+
+      &:is(:hover, :focus) {
+         background-color: $red;
+         color: #fff;
+      }
+   }
+}

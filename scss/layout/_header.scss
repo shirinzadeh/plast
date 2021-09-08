@@ -1,0 +1,61 @@
+.header {
+   background: url('../assets/img/header/hero-bg.svg') center center/cover no-repeat;
+   @include small {
+      background-position: left;
+   }
+
+   .hero {
+      @include flex;
+      justify-content: space-between;
+      padding: 3.5rem 0;
+
+      &-article {
+         padding: 7.375rem 2.5rem;
+         max-width: 619px;
+         @include small {
+            padding-left: 0;
+            padding-right: 0;
+         }
+
+         &__title {
+            margin-bottom: 1.5rem;
+
+            span {
+               color: $secondary;
+               display: inline-block;
+            }
+         }
+
+         &__text {
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+         }
+
+         &__button {
+            @include flex;
+
+            a:not(:last-child) {
+               margin-right: 1rem;
+            }
+         }
+      }
+
+      &-image {
+         @include large {
+            @include flex;
+            align-items: center;
+         }
+         @include medium {
+            display: none;
+         }
+
+         img {
+            @include large {
+               width: 100%;
+               height: auto;
+            }
+         }
+      }
+   }
+}
