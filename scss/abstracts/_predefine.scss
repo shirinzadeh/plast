@@ -52,7 +52,31 @@ a {
    text-decoration: none;
 }
 
-/* Owl Carousel */
-// .owl-dots {
-//    display: none;
-// }
+input[value] {
+   color: $grey ;
+}
+
+input:disabled {
+   border: 1px dotted rgba(0, 0, 0, 0.38) !important;
+   color: rgba(0, 0, 0, 0.38) !important;
+   background-color: transparent !important;
+}
+
+// Mobile Navbar collapse
+.collapse:not(.show) {
+   @include small {
+      display: none !important;
+   }
+}
+
+
+
+@include xsmall {
+   .owl-carousel .owl-stage-outer {
+      // margin: 0 42px;
+   
+      .owl-item {
+         // width: auto !important;
+      }
+   }
+}

@@ -30,10 +30,6 @@
                color: #fff;
             }
          }
-
-         i {
-
-         }
       }
    }
 
@@ -52,11 +48,14 @@
       }
 
       .form-floating {
-         
+
          .form-control {
-            color: $grey-light;
             border-radius: .5rem;
             border-color: $grey;
+         }
+
+         & > label {
+            color: $black50;
          }
       }
 

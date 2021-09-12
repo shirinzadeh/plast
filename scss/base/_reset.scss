@@ -49,13 +49,6 @@ input{
   border-radius: 0;
 }
 
-// Remove scrollbars from textarea
-textarea {
-  resize: none;
-  overflow: hidden;
-  height: auto !important;
-}
-
 //all placeholders in Firefox have an opacity value. to fix this
 ::-moz-placeholder {
   opacity: 1;
