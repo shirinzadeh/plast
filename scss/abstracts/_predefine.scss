@@ -68,15 +68,3 @@ input:disabled {
       display: none !important;
    }
 }
-
-
-
-@include xsmall {
-   .owl-carousel .owl-stage-outer {
-      // margin: 0 42px;
-   
-      .owl-item {
-         // width: auto !important;
-      }
-   }
-}
