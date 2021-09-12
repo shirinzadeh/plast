@@ -1,76 +1,122 @@
 $(document).ready(function(){
+   /**
+    * TEAM OWL CAROUSEL
+    */
    $(".owl-carousel").owlCarousel({
-      autoplay: false,
+      autoplay: true,
+      autoplayTimeout:2500,
+      autoplaySpeed: 1000,
       autoplayHoverPause: true,
       items: 4,
       margin: 24,
-      stagePadding: 24,
+      stagePadding: 0,
       nav: false,
       dots: false,
-      loop: false,
+      loop: true,
       responsive: {
          1200: {items: 4}
 ,         992: { items: 3 },
          768: { items: 2 },
-         450: { 
+         576: { 
             items: 2,
             stagePadding: 0
           },
           320: {
              items: 1,
-             stagePadding: 0
+             stagePadding: 0,
+            //  margin: 100
           }
       }
    });
 
+   /**
+    * FAQ SHOW MORE BUTTON
+    */
    $('.showmore').click(function() {
-      let $this = $(this);
-
       let str = $('.showmore span')
-      let downIcon = $('.showmore i');
+      let arrowIcon = $('.showmore i');
 
       if(str.eq(0).text() === 'Show another +30 reviews') {
          str.eq(0).text('Close reviews');
-         downIcon.eq(0).attr('class', 'icon-chevron-up');
+         arrowIcon.eq(0).attr('class', 'icon-chevron-up');
          $('#hiddenFaqs').slideDown(500);
       } else {
          $('#hiddenFaqs').slideUp(500);
          str.eq(0).text('Show another +30 reviews');
-         downIcon.eq(0).attr('class', 'icon-chevron-down');
+         arrowIcon.eq(0).attr('class', 'icon-chevron-down');
           }
 
    })
 
-   //without if statement console give Cannot read property 'addEventListener' of null at pages which cannot find the id
-// for(let i=0; i<moreBtnText.length; i++) {
-//    if(moreBtnText) {
-//       moreBtnText[i].addEventListener("click", ()=> {
-//          let content = moreBtnText[i].textContent; //Show more
-//          let hiddenContent = document.querySelectorAll('#hidden-elements')
-//             if( content === "Show more" ) {
-//                moreBtnText[i].textContent = "Show less";
-//                moreBtnIcon[i].classList.value = "fas fa-minus" //change plus icon to minus
-//                hiddenContent[i].classList.remove('d-none'); 
-//                hiddenContent[i].classList.add('d-block');
-//                // }
-//             } else {
-//                moreBtnText[i].textContent = "Show more";
-//                moreBtnIcon[i].classList.value = "fas fa-plus" //change minus icon to plus
-//                hiddenContent[i].classList.remove('d-block'); 
-//                hiddenContent[i].classList.add('d-none');
-//             }
-//       })
-//    }
-// }
+   /**
+    * FAQ ACCORDION
+    */
+   $('.faq .accordion-header').each(function() {
+      let $this = $(this);
 
-   // $('.faq .accordion-button').each(function(i, el) {
-   //    $(this).click(function() {
-   //       if(!$(this).hasClass('collapsed')) {
-   //          $(this).parents('.accordion-item').addClass('isExpanded')
-   //       } else {
-   //          $(this).parents('.accordion-item').removeClass('isExpanded')
-   //       }
-   //    })
-   // })
-      
+      $this.click(function() {
+         let collapsedContent = $this.parents('.accordion-item').find('.accordion-collapse')
+         let isCollapsed = !collapsedContent.hasClass('show') //return true
+
+         if(isCollapsed) {
+            //Add isExpanded class to only collapsed accordion
+            $this.parents('.accordion-item')
+                  .addClass('isExpanded')
+                  .siblings()
+                  .removeClass('isExpanded') 
+         } 
+      })
+   }) ;
+
+   /**
+    * increase textarea height based on content
+    */
+   $("textarea").each(function () {
+      this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
+    }).on("input", function () {
+      this.style.height = "auto";
+      this.style.height = (this.scrollHeight) + "px";
+    });
+
+   /**
+    * REMOVE DEFAULT VALUE OF INPUT ON FOCUS
+    */
+   let phoneInput = $('input[type="tel"]');
+   let defaultVal = phoneInput.val();
+  
+   phoneInput.focus(function() {
+       if(phoneInput.val() == defaultVal) {
+         phoneInput.val("") ;
+         phoneInput.addClass('text-color');
+       }
+   }).blur(function(){
+       if(phoneInput.val().length == 0) {
+            phoneInput.val(defaultVal);
+       }
+   });
+
+   $('.navbar-toggler').click(function() {
+      $(this).children().toggleClass('icon-x');
+   })
+
+   /**
+    * ON SCROLL
+    */
+   $(window).scroll(function () {
+      // ADD CLASS TO FIXED NAVBAR ON SCROLL
+     var $nav = $(".navbar-fixed");
+     $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+
+
+     //CHANGE ACTIVE CLASS ON SCROLL
+     let $y = $(this).scrollTop();
+     $('.nav-link').each(function (event) {
+         if ($y >= $($(this).attr('href')).offset().top - 200) {
+             $('.nav-link').not(this).removeClass('active');
+             $(this).addClass('active');
+         } else if($y <= 500) {
+            $('.nav-link').not(this).removeClass('active');
+         }
+     });
+   });
  });

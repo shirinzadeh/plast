@@ -25,6 +25,7 @@
 
       &-item {
          border: 1px solid #E0E0E0;
+         border-radius: 4px;
          &:not(:last-child) {
             margin-bottom: 1rem;
          }
@@ -38,7 +39,10 @@
          color: $text-color;
 
          &::after {
-            display: none;
+            background-image: url('../../assets/icons/plus.svg');
+            background-size: 14px;
+            width: 14px;
+            height: 14px;
          }
 
          &:focus {
@@ -49,11 +53,15 @@
             color: $secondary;
             box-shadow: none;
             padding-bottom: .5rem;
+
+            &::after{
+               background-image: url(../../assets/icons/minus.svg);
+            }
          }
 
          i {
             font-size: .875rem;
-            color: $grey-light;
+            color: $black50;
          }
       }
 

@@ -1,5 +1,8 @@
 .container {
    padding: 0 3.25rem !important;
+   @include extra-xlarge{
+      min-width: 1366px;
+   }
    @include small {
       padding: 0 1rem !important;
    }
@@ -67,6 +70,10 @@
    background-color: #FFFFE4;
 }
 
+.text-color {
+   color: $text-color !important;
+}
+
 /* PADDINGS */
 .pb-24 {
    padding-bottom: 1.5rem;
@@ -85,6 +92,12 @@
 .isExpanded {
    border: 1px solid #F26F68 !important;
 }
+
+.navbar-fixed.scrolled {
+   background-color: #fff !important;
+   box-shadow: 0px 6px 32px rgba(0, 0, 0, 0.08);
+   transition: background-color 200ms linear;
+ }
 
 /* ANIMATIONS */
 @include keyframes(toTop) {

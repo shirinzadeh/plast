@@ -17,9 +17,9 @@
 
 <body>
    <header class="header">
-      <div class="container">
-         <!-- NAVBAR  -->
-         <nav class="navbar navbar-expand-md">
+      <!-- NAVBAR  -->
+      <nav class="navbar navbar-fixed navbar-expand-md">
+         <div class="container">
             <!-- logo  -->
             <a href="index.html">
                <img src="assets/img/logo/logo.svg" alt="Logo" class="d-block align-text-top">
@@ -47,9 +47,10 @@
                   </li>
                </ul>
             </div>
-         </nav>
-         <!-- END NAVBAR  -->
-
+         </div>
+      </nav>
+      <!-- END NAVBAR  -->
+      <div class="container">
          <!-- HERO SECTION  -->
          <div class="hero">
             <div class="hero-article">
@@ -169,7 +170,7 @@
                   </div>
                </div>
             </div>
-            <div class="row pb-24">
+            <div class="row ">
                <div class="col-lg-6 pb-24 pb-lg-0">
                   <div class="features-box features-box--third">
                      <div class="features-box__image">
@@ -399,7 +400,7 @@
                <h6 class="h6 accordion-header" id="headingOne">
                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                      <h6 class="h6">What is Plast?</h6>
-                     <i class="icon-plus"></i>
+                     <!-- <i class="icon-plus"></i> -->
                   </button>
                </h6>
                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -578,7 +579,7 @@
                      <label for="floatingEmail">Email address</label>
                   </div>
                   <div class="form-floating">
-                     <input type="number" class="form-control" id="floatingPhone" placeholder="Phone number" required>
+                     <input type="tel" class="form-control" id="floatingPhone" value="+994 123 45 67" placeholder="Phone number" required>
                      <label for="floatingPhone">Phone number</label>
                   </div>
                   <div class="form-floating">
