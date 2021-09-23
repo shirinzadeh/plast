@@ -1,5 +1,5 @@
 .header {
-   background: url('../assets/img/header/hero-bg.svg') center center/cover no-repeat;
+   background: url('../assets/img/header/hero-bg.png') center center/cover no-repeat;
    @include small {
       background-position: left;
    }
@@ -7,15 +7,20 @@
    .hero {
       @include flex;
       justify-content: space-between;
-      padding: 3.5rem 0;
+      padding-bottom: 3.5rem;
+      @include calc(padding-top, 3.5rem + 4.5rem); //addition 72px navbar height
 
       &-article {
          padding: 7.375rem 2.5rem;
          max-width: 619px;
-         @include small {
-            padding-left: 0;
-            padding-right: 0;
+         @include medium {
+            padding: 8.25rem 0;
          }
+         @include small {
+            padding-top: 6.438rem;
+            padding-bottom: 6.438rem;
+         }
+         
 
          &__title {
             margin-bottom: 1.5rem;
@@ -34,9 +39,19 @@
 
          &__button {
             @include flex;
+            margin-bottom: .5rem;
 
             a:not(:last-child) {
                margin-right: 1rem;
+            }
+         }
+
+         &__info {
+            span {
+               margin-left: .5rem;
+               font-size: 0.875rem;
+               line-height: 1.375rem;
+               letter-spacing: 0.001em;
             }
          }
       }
