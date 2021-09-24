@@ -1,0 +1,30 @@
+.work {
+   &-content {
+      margin-top: 3.5rem;
+
+      i {
+         color: $primary;
+         font-size: 1.35rem;
+         @include small {
+            display: none;
+         }
+      }
+
+      &-box {
+         @include flex-center;
+         flex-direction: column;
+         padding: 1rem;
+         
+         &:not(:last-child) {
+            @include small {
+               margin-bottom: 16px;
+            }
+         }
+
+         &__title {
+            margin-top: 1rem;
+            text-align: center;
+         }
+      }
+   }
+}

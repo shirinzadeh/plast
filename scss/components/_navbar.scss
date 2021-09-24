@@ -34,6 +34,9 @@
 
          &:not(:first-child) {
             margin-left: 2rem !important;
+            @include medium {
+               margin-left: 1.2rem !important;
+            }
             @include small {
                margin-left: 0 !important;
             }
