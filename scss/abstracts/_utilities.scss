@@ -21,7 +21,7 @@
 }
 
 .plst-section {
-   padding: 4.5rem 0;
+   padding: 4.5rem 0 !important;
 }
 
 .heading {
@@ -31,6 +31,26 @@
       .subtitle {
          max-width: 750px;
          margin: auto;
+      }
+   }
+
+   &__link {
+      color: $secondary !important;
+      margin: .5rem 0;
+      display: inline-block;
+
+      &:is(:hover,:focus){
+         span {
+            text-decoration: underline;
+         }
+      }
+
+      span {
+         margin-right: 4px;
+      }
+
+      i {
+         font-size: 1.25rem;
       }
    }
 }

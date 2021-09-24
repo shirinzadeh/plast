@@ -44,9 +44,8 @@ $(document).ready(function(){
          $('#hiddenFaqs').slideUp(500);
          str.eq(0).text('Show another +30 reviews');
          arrowIcon.eq(0).attr('class', 'icon-chevron-down');
-          }
-
-   })
+      }
+   });
 
    /**
     * FAQ ACCORDION
@@ -55,15 +54,13 @@ $(document).ready(function(){
       let $this = $(this);
 
       $this.click(function() {
-         let collapsedContent = $this.parents('.accordion-item').find('.accordion-collapse')
+         const accordionItem = $this.parents('.accordion-item');
+         const collapsedContent = accordionItem.find('.accordion-collapse')
          let isCollapsed = !collapsedContent.hasClass('show') //return true
 
          if(isCollapsed) {
             //Add isExpanded class to only collapsed accordion
-            $this.parents('.accordion-item')
-                  .addClass('isExpanded')
-                  .siblings()
-                  .removeClass('isExpanded') 
+            accordionItem.addClass('isExpanded').siblings().removeClass('isExpanded') 
          } 
       })
    }) ;
