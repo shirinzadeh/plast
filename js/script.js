@@ -3,7 +3,7 @@ $(document).ready(function(){
     * TEAM OWL CAROUSEL
     */
    $(".owl-carousel").owlCarousel({
-      autoplay: false,
+      autoplay: true,
       autoplayTimeout:2500,
       autoplaySpeed: 1000,
       autoplayHoverPause: true,
