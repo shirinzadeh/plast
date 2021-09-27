@@ -4,12 +4,19 @@
       border-radius: .5rem;
       padding: 3.25rem 6.688rem 0;
       @include large {
-         padding-left: 1rem;
-         padding-right: 1rem;
+         padding-left: 6.688rem;
+         padding-right: 6.688rem;
+         padding-bottom: 3.25rem;
       }
-      @include xsmall {
-         padding-top: 2rem;
-         padding-bottom: 1.5rem;
+      @include medium {
+         padding-left: 2.25rem;
+         padding-right: 2.25rem;
+      }
+
+      img {
+         @include medium {
+            display: none !important;
+         }
       }
    }
 }
@@ -24,6 +31,13 @@
 
       &-content {
          background-color: transparent;
+         @include calc(padding-top, 3.25rem+4.5rem);
+
+         img {
+            @include medium {
+               display: none !important;
+            }
+         }
       }
 
       .heading__link {
@@ -38,9 +52,12 @@
          padding: 0 13.375rem;
          margin-top: 2.5rem;
          @include xlarge {
-            padding: 5rem;
+            padding:0 5rem;
          }
-         @include large {
+         @include medium {
+            padding: 0 7rem;
+         }
+         @include small {
             padding: 0;
          }
       }
@@ -50,16 +67,10 @@
          align-items: center;
          gap: 8.188rem;
 
-         &:nth-child(even){
-            @include small {
-               // flex-direction: column-reverse;
-               background-color: red;
-            }
-         }
          @include large {
             gap: 5rem;
          }
-         @include small {
+         @include medium {
             flex-direction: column;
             justify-content: center;
             gap: 2rem;
