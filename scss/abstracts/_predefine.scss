@@ -63,7 +63,7 @@ input:disabled {
 }
 
 // Mobile Navbar collapse
-.collapse:not(.show) {
+.navbar-collapse.collapse:not(.show) {
    @include small {
       display: none !important;
    }

@@ -50,20 +50,23 @@ $(document).ready(function(){
    /**
     * FAQ ACCORDION
     */
-   $('.faq .accordion-header').each(function() {
-      let $this = $(this);
+   $(document).on("click",'.faq .accordion-header', function () {
+      const $t = $(this);
 
-      $this.click(function() {
-         const accordionItem = $this.parents('.accordion-item');
-         const collapsedContent = accordionItem.find('.accordion-collapse')
-         let isCollapsed = !collapsedContent.hasClass('show') //return true
+      const parentAccItem = $t.parents('.accordion-item');
+      let trg = parentAccItem.attr("data-trig");
+      let accItem = $t.parents('.accordion').find('.accordion-item');
 
-         if(isCollapsed) {
-            //Add isExpanded class to only collapsed accordion
-            accordionItem.addClass('isExpanded').siblings().removeClass('isExpanded') 
-         } 
-      })
-   }) ;
+      accItem.removeClass('isExpanded');
+       if (trg == 0) {
+         accItem.attr("data-trig",'0');
+         parentAccItem.attr("data-trig",'1');
+         parentAccItem.addClass('isExpanded');
+       } else {
+         parentAccItem.removeClass('isExpanded');
+         parentAccItem.attr("data-trig",'0');
+       }   
+   })
 
    /**
     * increase textarea height based on content
