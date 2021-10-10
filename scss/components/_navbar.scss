@@ -19,9 +19,14 @@
       padding: 0;
    }
 
+   &-collapse{
+      @include small{
+         margin-top: .75rem;
+      }
+   }
+
    &-nav {
       @include small {
-         margin-top: .75rem;
          border: 1px solid $grey;
          border-radius: 4px;
          background-color: #fff;

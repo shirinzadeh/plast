@@ -1,5 +1,12 @@
 $(document).ready(function(){
    /**
+    * NAVBAR
+    */
+      $('.navbar-toggler').click(function() {
+      $(this).children().toggleClass('icon-x');
+   })
+
+   /**
     * TEAM OWL CAROUSEL
     */
    $(".owl-carousel").owlCarousel({
@@ -50,20 +57,23 @@ $(document).ready(function(){
    /**
     * FAQ ACCORDION
     */
-   $('.faq .accordion-header').each(function() {
-      let $this = $(this);
+   $(document).on("click",'.faq .accordion-header', function () {
+      const $t = $(this);
 
-      $this.click(function() {
-         const accordionItem = $this.parents('.accordion-item');
-         const collapsedContent = accordionItem.find('.accordion-collapse')
-         let isCollapsed = !collapsedContent.hasClass('show') //return true
+      const parentAccItem = $t.parents('.accordion-item');
+      let trg = parentAccItem.attr("data-trig");
+      let accItem = $t.parents('.accordion').find('.accordion-item');
 
-         if(isCollapsed) {
-            //Add isExpanded class to only collapsed accordion
-            accordionItem.addClass('isExpanded').siblings().removeClass('isExpanded') 
-         } 
-      })
-   }) ;
+      accItem.removeClass('isExpanded');
+       if (trg == 0) {
+         accItem.attr("data-trig",'0');
+         parentAccItem.attr("data-trig",'1');
+         parentAccItem.addClass('isExpanded');
+       } else {
+         parentAccItem.removeClass('isExpanded');
+         parentAccItem.attr("data-trig",'0');
+       }   
+   })
 
    /**
     * increase textarea height based on content
@@ -78,23 +88,24 @@ $(document).ready(function(){
    /**
     * REMOVE DEFAULT VALUE OF INPUT ON FOCUS
     */
-   let phoneInput = $('input[type="tel"]');
-   let defaultVal = phoneInput.val();
-  
-   phoneInput.focus(function() {
-       if(phoneInput.val() == defaultVal) {
-         phoneInput.val("") ;
-         phoneInput.addClass('text-color');
-       }
-   }).blur(function(){
-       if(phoneInput.val().length == 0) {
-            phoneInput.val(defaultVal);
-       }
-   });
+   let phoneInput = $('.phone-field');
 
-   $('.navbar-toggler').click(function() {
-      $(this).children().toggleClass('icon-x');
-   })
+      $(phoneInput).each(function() {
+          $.data(this, 'default', this.value);
+      }).css("color","#e0e0e0")
+      .focus(function() {
+          if (!$.data(this, 'edited')) {
+              this.value = "";
+              $(this).css("color","#424242");
+          }
+      }).change(function() {
+          $.data(this, 'edited', this.value != "");
+      }).blur(function() {
+          if (!$.data(this, 'edited')) {
+              this.value = $.data(this, 'default');
+              $(this).css("color","#e0e0e0");
+          }
+      });W
 
    /**
     * ON SCROLL
