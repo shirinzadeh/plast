@@ -1,5 +1,12 @@
 $(document).ready(function(){
    /**
+    * NAVBAR
+    */
+      $('.navbar-toggler').click(function() {
+      $(this).children().toggleClass('icon-x');
+   })
+
+   /**
     * TEAM OWL CAROUSEL
     */
    $(".owl-carousel").owlCarousel({
@@ -81,23 +88,24 @@ $(document).ready(function(){
    /**
     * REMOVE DEFAULT VALUE OF INPUT ON FOCUS
     */
-   let phoneInput = $('input[type="tel"]');
-   let defaultVal = phoneInput.val();
-  
-   phoneInput.focus(function() {
-       if(phoneInput.val() == defaultVal) {
-         phoneInput.val("") ;
-         phoneInput.addClass('text-color');
-       }
-   }).blur(function(){
-       if(phoneInput.val().length == 0) {
-            phoneInput.val(defaultVal);
-       }
-   });
+   let phoneInput = $('.phone-field');
 
-   $('.navbar-toggler').click(function() {
-      $(this).children().toggleClass('icon-x');
-   })
+      $(phoneInput).each(function() {
+          $.data(this, 'default', this.value);
+      }).css("color","#e0e0e0")
+      .focus(function() {
+          if (!$.data(this, 'edited')) {
+              this.value = "";
+              $(this).css("color","#424242");
+          }
+      }).change(function() {
+          $.data(this, 'edited', this.value != "");
+      }).blur(function() {
+          if (!$.data(this, 'edited')) {
+              this.value = $.data(this, 'default');
+              $(this).css("color","#e0e0e0");
+          }
+      });W
 
    /**
     * ON SCROLL
