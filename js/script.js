@@ -105,7 +105,7 @@ $(document).ready(function(){
               this.value = $.data(this, 'default');
               $(this).css("color","#e0e0e0");
           }
-      });W
+      });
 
    /**
     * ON SCROLL
@@ -114,7 +114,6 @@ $(document).ready(function(){
       // ADD CLASS TO FIXED NAVBAR ON SCROLL
      var $nav = $(".navbar-fixed");
      $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
-
 
      //CHANGE ACTIVE CLASS ON SCROLL
      let $y = $(this).scrollTop();
