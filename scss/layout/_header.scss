@@ -26,7 +26,7 @@
          }
          @include small {
             position: absolute;
-            top: 50%;
+            top: calc(50% + 4.5rem);
             left: 50%;
             padding: 0 1rem;
             width: 100%;
